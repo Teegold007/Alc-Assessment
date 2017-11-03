@@ -1,0 +1,51 @@
+extends layout
+
+block content
+    link(type='text/css', rel='stylesheet', href='/homepage.css')
+
+    body
+      nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.bg-dark
+        a.navbar-brand(href='/') Teegoldz
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarTogglerDemo02', aria-controls='navbarTogglerDemo02', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarTogglerDemo02.collapse.navbar-collapse
+          ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+            li.nav-item.active
+              a.nav-link(href='/')
+                | Home
+                span.sr-only (current)
+            li.nav-item
+              a.nav-link(href='/student/add') Add Student
+      .container
+        != messages('message', locals)
+        #button-row.row
+          button#add-student.btn.btn-outline-secondary(type='button') Add Student
+        if students.length == 0
+          div#no-student-res
+            h2#no-text No Student Available 
+            h6#no-text You can add student by clicking on the add icon
+              i.fa.fa-smile-o(aria-hidden='true')
+        else
+          .row
+          
+            #exampleModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+              .modal-dialog(role='document')
+                .modal-content
+                  .modal-header
+                    h5#exampleModalLabel.modal-title Delete Student 
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                      span(aria-hidden='true') ×
+                  .modal-body
+                    | Are you sure you want to delete this student?
+                  .modal-footer
+                    button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+                    button#delete-btn-home.btn.btn-danger(type='button') Delete
+            each student, i in students
+              .col-md-3
+                button.close(type='button', data-toggle='modal', data-target='#exampleModal', aria-label='Close', data-id=`${student._id}`)
+                  span(aria-hidden='true') ×
+                a(href=`/studentview/${student._id}`, id='stud')
+                  #sec.rounded
+                    img.rounded.mx-auto.d-block(src=`${student.img}`, alt='...')
+                    p#name #{student.lastname} #{student.firstname}
+                    p#dept.font-italic #{student.course}

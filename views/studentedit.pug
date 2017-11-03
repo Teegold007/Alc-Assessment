@@ -1,0 +1,70 @@
+extends layout
+
+block content
+    link(type='text/css', rel='stylesheet', href='/studentedit.css')
+    
+    body
+      nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.bg-dark
+        a.navbar-brand(href='/') TEEGOLDZ
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarTogglerDemo02', aria-controls='navbarTogglerDemo02', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarTogglerDemo02.collapse.navbar-collapse
+          ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+            li.nav-item
+              a.nav-link(href='/')
+                | Home
+                span.sr-only (current)
+            li.nav-item
+              a.nav-link(href='/student/add') Add Student
+      .container
+        .col-md-4
+            if errors
+                div(class="alert alert-danger") #{errors[1].msg}
+        .row
+          .col-md-8
+            h2 Edit Student info
+            form(method="POST", action="/studentview/edit/" + student._id)
+              .form-group
+                label(for='firstname') Firstname
+                input#firstname.form-control(placeholder='Firstname', name = "firstname",value=student.firstname type="text", pattern="[a-zA-Z]+")
+              .form-group
+                label(for='lastname') Lastname
+                input#lastname.form-control(placeholder='Lastname', name = "lastname",value=student.lastname type="text", pattern="[a-zA-Z]+")
+              .form-group
+                label(for='phone') Phone number
+                input#mobile.form-control(placeholder='234XXXXXXXXXX', name = "phone",type='tel',value=student.phone )
+              .form-group
+                label(for='email') Email
+                input#email.form-control(placeholder='name@domain.com', name = "email",value=student.email type="email")
+              .form-group
+                label(for='exampleFormControlSelect1') Gender
+                select#exampleFormControlSelect1.form-control(name = "gender")
+                  option Male
+                  option Female
+                  option Other
+
+              .form-group
+                
+                input.form-control(type='hidden', placeholder='Readonly input here…', readonly='', value = "https://api.adorable.io/avatars/140/abott@adorable.png", name = "img")
+              .form-group
+                label(for='course') Course
+                select#course.form-control(name = "course" value=student.course)
+                  option Html
+                  option Javascript
+                  option css
+                  option python
+                  option Mongodb
+                  option Node.js
+                  
+              
+              .form-group
+                label(for='exampleFormControlSelect1') Level
+                select#exampleFormControlSelect1.form-control(name = "level" value=student.level)
+                  option Beginners
+                  option intermediate
+                  option proffessional
+              
+              br
+              button.btn.btn-primary(type='submit') Update
+          
+              

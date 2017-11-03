@@ -1,0 +1,20 @@
+.container {
+    padding: 100px 10px;
+}
+body{
+    background-color: burlywood;
+}
+.navbar-brand {
+    font-size: 36px;
+    font-family: 'Satisfy', 'cursive';
+}
+#button-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 60px;
+}
+
+#add-student {
+    cursor: pointer;
+    padding: 10px 20px;
+}

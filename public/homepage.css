@@ -1,0 +1,88 @@
+body{
+    background-color: orchid;
+}
+.container {
+    padding: 100px 10px;
+}
+.navbar-brand {
+    font-size: 36px;
+    font-family: 'Satisfy', 'cursive';
+}
+#button-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 50px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#add-student {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: blanchedalmond;
+    
+}
+#add-student:hover{
+    background-color: black;
+}
+div#no-student-res {
+    display: flex;
+    width: 100%;
+    height: 40vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h2#no-text, h6#no-text {
+    color: #d3d3d3;
+}
+
+#sec {
+    background: rgba(112, 208, 218, 0.46);
+    box-shadow: 5px 5px 25px 0px rgba(46,61,73,0.2);
+    margin: 10px 0;
+    cursor: pointer;
+    height: 300px;
+}
+img{
+    padding-top: 10px;
+    height: 200px;
+    width: 100%;
+}
+
+#sec:hover {
+    background: rgba(22, 10, 10, 0.82);
+}
+
+body > div > div:nth-child(2) > div {
+    transition: all ease-in-out 200ms;
+}
+
+body > div > div:nth-child(2) > div:hover {
+    transform: scale(1.02);
+}
+
+a#stud:hover {
+    text-decoration: none;
+}
+
+#name, #dept {
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+
+span {
+    padding: 20px 0px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #2f4f4f;
+    transition: all ease-in-out 100ms;
+}
+
+span:hover {
+    color: #ff001a;
+    font-size: 40px;
+}
+

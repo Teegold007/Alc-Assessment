@@ -1,0 +1,30 @@
+.container {
+    padding: 100px 10px;
+    
+}
+body{
+    background-color: burlywood;
+}
+img {
+    width: 250px;
+    height: 250px;
+    
+    background-color: #fff;
+    margin-bottom: 35px;
+    border: 5px solid #d9d9d9;
+}
+.navbar-brand {
+    font-size: 36px;
+    font-family: 'Satisfy', cursive;
+}
+
+#button-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 60px;
+}
+
+#add-student {
+    cursor: pointer;
+    padding: 10px 20px;
+}

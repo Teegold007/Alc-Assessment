@@ -1,0 +1,109 @@
+.container-fluid {
+    padding: 0;
+}
+
+#profile-pic-bg {
+    background-color: #212529;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#profile-pic {
+    display: flex;
+    justify-content: center;
+}
+    
+div#name-tag {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding-top: 20px;
+    color: #fff;
+    text-align: center;
+    font-family: 'Droid Sans', sans-serif;
+}
+#profilehead{
+    padding-top: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-bottom: 35px;
+    border: 5px solid #d9d9d9;
+}
+
+ul li {
+    list-style: none;
+    padding: 10px;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-size: 18px;
+}
+
+ul li em {
+    padding-left: 10px;
+}
+
+span {
+    color: #d3d3d3;
+    padding-left: 10px;
+}
+
+#personal-records {
+    padding-top: 75px;
+}
+
+.recordsheader {
+    color: #d3d3d3;
+}
+
+div#records {
+    padding-top: 50px;
+    margin-top: 20px;
+}
+
+div#records ul li {
+    padding: 15px;
+    font-size: 19px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+#button-row {
+    display: flex;
+    margin: 10px 0;
+    justify-content: space-between;
+}
+
+
+#button-edit-del {
+    display: flex;
+    justify-content: center;
+}
+
+#edit-btn, #delete-btn, #back-btn {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+.navbar-brand {
+    font-size: 36px;
+    font-family: 'Satisfy', 'cursive';
+}
+#edit-btn {
+    margin-right: 5px;
+}
+
+
+
+@media all and (max-width: 500px) {
+    #profilehead {
+        flex-direction: column;
+        
+    }
+}
+

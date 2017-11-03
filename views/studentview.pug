@@ -1,0 +1,74 @@
+extends layout
+
+block content
+    link(type='text/css', rel='stylesheet', href='/studentview.css')
+    
+
+    body
+      nav.navbar.fixed-top.navbar-expand-lg.navbar-dark.bg-dark
+        a.navbar-brand(href='/') Teegoldz
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarTogglerDemo02', aria-controls='navbarTogglerDemo02', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarTogglerDemo02.collapse.navbar-collapse
+          ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+            li.nav-item
+              a.nav-link(href='/')
+                | Homepage
+                span.sr-only (current)
+            li.nav-item
+              a.nav-link(href='/student/add') Add Student
+      .container-fluid
+        != messages('message', locals)
+        #exampleModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+          .modal-dialog(role='document')
+            .modal-content
+              .modal-header
+                h5#exampleModalLabel.modal-title Delete Student 
+                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                  span(aria-hidden='true') ×
+              .modal-body
+                | Are you sure you want to delete this student?
+              .modal-footer
+                button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+                button#delete-btn-home.btn.btn-danger(type='button') Delete
+        .row
+          #profile-pic-bg.col-md-12
+            #profilehead.container
+              #profile-pic.col-md-4
+                img(src=`${student.img}`)
+              #name-tag.col-md-4
+                h2 #{student.lastname}
+                h2 #{student.firstname}
+        .row
+          .container
+            .row
+              #personal-records.col-md-5
+                h4.recordsheader Personal
+                ul
+                  li
+                    | Gender: 
+                    em #{student.gender}
+                  
+                  li
+                    | phone: 
+                    em #{student.phone}
+                  ul
+              .col-md-7#records
+                h4.recordsheader Education
+                ul
+                  li
+                    | course: 
+                    em #{student.course}
+                  
+                  li
+                    | Level: 
+                    em #{student.level}
+
+                  ul
+        .container
+          #button-row.row
+            #button-back.row
+              button#back-btn.btn.btn-outline-secondary(type='button') Back
+            #button-edit-del.row
+              button#edit-btn.btn.btn-outline-primary(type='button', data-id=`${student._id}`) Edit
+              button#delete-btn.btn.btn-outline-danger(type='button', data-id=`${student._id}`, data-toggle="modal", data-target="#exampleModal") Delete
