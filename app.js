@@ -205,5 +205,5 @@ app.delete('/studentview/:id', (req, res) => {
 
 // Start Server
 app.listen(process.env.PORT || 3010, function() {
-    console.log("Connected correctly to server ");
+    console.log("App listened at port 3010 ");
 });
