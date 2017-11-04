@@ -1,6 +1,6 @@
 # Alc-Assessment
 A requirement for the ALC2.0
-Getting Started
+GETTING STARTED
 
 Make sure you have the following dependencies installed:
 Node.js & NPM
@@ -10,5 +10,5 @@ Clone the start directory
 Install package dependencies
 
 npm install or yarn install
-Start server
+START SERVER
 npm start or node app
