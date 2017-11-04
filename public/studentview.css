@@ -1,3 +1,6 @@
+body{
+    background-color: wheat
+}
 .container-fluid {
     padding: 0;
 }
@@ -54,14 +57,16 @@ span {
 }
 
 #personal-records {
-    padding-top: 75px;
+    padding-top: 80px;
 }
 
 .recordsheader {
-    color: #d3d3d3;
+    color: black
 }
 
 div#records {
+    text-align: left;
+    align-content: left;
     padding-top: 50px;
     margin-top: 20px;
 }
