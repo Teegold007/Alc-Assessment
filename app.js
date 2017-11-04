@@ -155,7 +155,7 @@ app.post('/student/add',urlencodedParser, (req, res) => {
         console.log('Student created!');
         
         // Alert for newly added student resource.
-        req.flash('success', 'Student Resource Added.');
+        req.flash('success'," student created" );
         res.redirect('/');
       }
     });
@@ -204,6 +204,6 @@ app.delete('/studentview/:id', (req, res) => {
 });
 
 // Start Server
-app.listen(process.env.PORT || 3010, function() {
-    console.log("App listened at port 3010 ");
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
