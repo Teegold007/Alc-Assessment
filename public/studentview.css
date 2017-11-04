@@ -3,7 +3,7 @@
 }
 
 #profile-pic-bg {
-    background-color: #212529;
+    background-color: darkslateblue;
     padding: 20px;
     margin-bottom: 20px;
 }
@@ -31,7 +31,7 @@ div#name-tag {
 img {
     width: 250px;
     height: 250px;
-    border-radius: 50%;
+    
     background-color: #fff;
     margin-bottom: 35px;
     border: 5px solid #d9d9d9;
