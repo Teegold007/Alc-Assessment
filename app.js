@@ -16,21 +16,21 @@ db.once('open', function () {
 console.log("Connected correctly to server");
 });
 
-// Initializing App
+//  App initialization
 var app = express();
 
-//Bring in models
+// importing models
 var Student = require('./models/homepage');
 
-// Load View Engine
+// Template Engine
 app.set('view engine', 'pug');
 
 
-// Loading body-parser middleware
+//  body-parser middleware
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 
-// Setting static folder
+//  static folder
 app.use(express.static('./public/'));
 
 // Express Session Middleware
@@ -40,7 +40,7 @@ app.use(session({
   saveUninitialized: true
 }));
 
-// Express Messages Middleware
+// Express flash-Messages Middleware
 app.use(require('connect-flash')());
 app.use(function (req, res, next) {
   res.locals.messages = require('express-messages')(req, res);
@@ -79,7 +79,7 @@ app.get('/', (req, res) => {
   });
 });
 
-// Student View Route
+// View student Route
 app.get('/studentview/:id', (req, res) => {
   Student.findById(req.params.id, (err, student) => {
     if(err) {
@@ -91,7 +91,7 @@ app.get('/studentview/:id', (req, res) => {
   });
 });
 
-// Student Edit Route
+//Edit student Route
 app.get('/studentview/edit/:id', (req, res) => {
   Student.findById(req.params.id, (err, student) => {
     if(err) {
@@ -197,7 +197,7 @@ app.delete('/studentview/:id', (req, res) => {
     if(err) {
       console.log(err);
     }
-    // Alert for deleted student resource.
+    // Alert for deleted student.
     req.flash('danger', 'Student page Deleted.');
     res.send('Success');
   });
